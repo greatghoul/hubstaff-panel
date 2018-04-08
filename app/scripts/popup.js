@@ -3,10 +3,15 @@
 
 import $ from 'jquery'
 
+function setTotal () {
+  $('#duration').text(window.localStorage['weekly_total'])
+}
+
 function extractTotal (html) {
   const doc = $($.parseHTML(html))
   const total = doc.find('.weekly-reports-table:first .tfoot .duration:last').text()
-  $('#duration').text(total)
+  window.localStorage['weekly_total'] = total
+  setTotal()
 }
 
 function fetchTotal () {
@@ -16,3 +21,5 @@ function fetchTotal () {
 }
 
 fetchTotal()
+
+$(document).ready(() => setTotal())
