@@ -24,6 +24,6 @@
   },
   "permissions": [
     "tabs",
-    "<all_urls>"
+    "https://app.hubstaff.com/reports/my/weekly*"
   ]
 }
