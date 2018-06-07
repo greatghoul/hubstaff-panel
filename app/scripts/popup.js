@@ -14,7 +14,7 @@ function setTotal () {
 
 function extractTotal (html) {
   const doc = $($.parseHTML(html))
-  const total = $.trim(doc.find('.weekly-reports-table:first .tfoot .duration:last').text())
+  const total = $.trim(doc.find('#widget_this_week_total .text-value .duration').text())
   window.localStorage['weekly_total'] = total
   setTotal()
 }
@@ -34,7 +34,7 @@ function handleErrors (response) {
 }
 
 function fetchTotal () {
-  window.fetch('https://app.hubstaff.com/reports/my/weekly?', { credentials: 'include' })
+  window.fetch('https://app.hubstaff.com/dashboard', { credentials: 'include' })
     .then(handleErrors)
     .then(extractTotal)
     .catch(showLogin)
