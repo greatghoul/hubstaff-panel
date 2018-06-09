@@ -1,7 +1,7 @@
 {
   "name": "Hubstaff-Panel",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hubstaff Panel",
   "scripts": {
     "start": "npm run dev:chrome",
