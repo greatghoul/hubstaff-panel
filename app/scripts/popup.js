@@ -34,7 +34,7 @@ function handleErrors (response) {
 }
 
 function fetchTotal () {
-  window.fetch('https://app.hubstaff.com/dashboard', { credentials: 'include' })
+  window.fetch('https://app.hubstaff.com/dashboard/me', { credentials: 'include' })
     .then(handleErrors)
     .then(extractTotal)
     .catch(showLogin)
