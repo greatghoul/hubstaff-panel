@@ -19,6 +19,6 @@
   },
   "permissions": [
     "tabs",
-    "https://app.hubstaff.com/reports/my/weekly*"
+    "https://app.hubstaff.com/dashboard/me"
   ]
 }

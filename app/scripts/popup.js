@@ -1,8 +1,3 @@
-// Enable chromereload by uncommenting this line:
-// import 'chromereload/devonly'
-
-import $ from 'jquery'
-
 function setTotal () {
   let total = window.localStorage['weekly_total']
   if (!total) {
@@ -14,7 +9,7 @@ function setTotal () {
 
 function extractTotal (html) {
   const doc = $($.parseHTML(html))
-  const total = $.trim(doc.find('#widget_this_week_total .text-value .duration').text())
+  const total = $.trim(doc.find('#widget_this_week_total .text-value data.duration').text())
   window.localStorage['weekly_total'] = total
   setTotal()
 }
@@ -42,4 +37,4 @@ function fetchTotal () {
 
 fetchTotal()
 
-$(document).ready(() => setTotal())
+$(() => setTotal())
